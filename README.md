@@ -1,5 +1,7 @@
 # Apollo
 ## Semester Calendar 
+The project involves implementing a tool (scheduler) that helps schedule and organize MathCS classes. This scheduler should reflect different class meeting patterns (MW, MWF, TuTh, Fri only) and it should be very user-friendly, via an easy to interact with interface. Classes should be shown via a calendar-like layout. Each class should be created into a unique movable box directly on the calendar (drag and drop). The ideal software would feature a robust, fast, and elegant GUI.
+
 
 ### Getting Started
 1. [Download MongoDB] (https://docs.mongodb.org/manual/installation/)
