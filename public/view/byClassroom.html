@@ -1,0 +1,72 @@
+<div>
+    <table class="scroll calendar">
+        <thead>
+            <tr>
+                <td>
+                    <div id="verticalSpace" class="btn-group " uib-dropdown is-open="status.isopen">
+                        <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                            {{code}} <span class="caret"></span>
+                        </button>
+                        <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="room in classrooms" ng-click="setRoom(room.code)" role="menuitem"><a>{{room.code}}</a></li>
+                        </ul>
+                    </div>
+                </td>
+                <td ng-repeat="day in days">
+                    <div id="horizontalLabel">{{day}}</div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="time in timeSlots">
+                <td>
+                    <div id="verticalLabel">{{time}}</div>
+                </td>
+                <td ng-repeat="day in days">
+                    <div id="gridEntry">
+                        <div id="occupied" ng-if="findIndex(days.length*$parent.$index+$index)" ng-dblclick="focus('professor'); editorEnabled = true">
+                            <div id="visiblePart" ng-hide="editorEnabled">
+                                <div>
+                                    {{inputs[days.length*$parent.$parent.$index + $index].professor}}
+                                    <span style="float:right" ng-click="removeBlock($parent.$parent.$index, $index)" class="btn btn-xs "><i class="glyphicon glyphicon-minus"></i></span>
+                                </div>
+                                <div>
+                                    {{inputs[days.length*$parent.$parent.$index + $index].classId}}
+                                </div>
+                                <div>
+                                    {{inputs[days.length*$parent.$parent.$index + $index].room}}
+                                </div>
+                                <div>
+                                    {{inputs[days.length*$parent.$parent.$index + $index].days}}
+                                </div>
+                                <div>
+                                    {{inputs[days.length*$parent.$parent.$index + $index].time}}
+                                </div>
+                            </div>
+                            <div id="hiddenPart" class="form-group" ng-enter="editorEnabled= false; update($parent.$parent.$index, $index)" ng-show="editorEnabled">
+                                <nobr>
+                                    <div id="professor">
+                                        <input uib-typeahead="prof.name for prof in profList | filter:$viewValue | limitTo:8" class="form-control input-sm" show-focus="focusObject ==='professor'" ng-click="focus('professor')" ng-model="inputs[days.length*$parent.$parent.$index+$index].professor">
+                                    </div>
+                                    <div id="class">
+                                        <input class="form-control input-sm" show-focus="focusObject === 'class'" ng-click="focus('class')" ng-model="inputs[days.length*$parent.$parent.$index+$index].classId">
+                                    </div>
+                                    <div id="room">
+                                        <input uib-typeahead="room.code for room in roomList | filter:$viewValue | limitTo:8" class="form-control input-sm" show-focus="focusObject ==='room'" ng-click="focus('room')" ng-model="inputs[days.length*$parent.$parent.$index+$index].room">
+                                    </div>
+                                    <div id="days">
+                                        <input class="form-control input-sm" show-focus="focusObject ==='days'" ng-click="focus('days')" ng-model="inputs[days.length*$parent.$parent.$index+$index].days">
+                                    </div>
+                                    <div id="time">
+                                        <input uib-typeahead="slot for slot in timeSlots | filter:$viewValue | limitTo:8" class="form-control input-sm" show-focus="focusObject ==='time'" ng-click="focus('time')" ng-model="inputs[days.length*$parent.$parent.$index+$index].time">
+                                    </div>
+                            </div>
+                        </div>
+                        <div id="vacant" ng-if="!findIndex(days.length*$parent.$index+$index)" ng-dblclick="focus('professor'); editorEnabled= true;createBlock(days.length*$parent.$parent.$index+$index, $index, $parent.$parent.$index)">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,111 @@
+{
+    "blocks": [{
+        "professor": "Valerie Summet",
+        "classId": "CS255",
+        "room": "W201",
+        "time": "8:30am",
+        "days": "TTh"
+    }, {
+        "professor": "James Nagy",
+        "classId": "MATH315",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Anca Doloc",
+        "classId": "CS485",
+        "room": "W203",
+        "time": "4:00pm",
+        "days": "MW"
+    }, {
+        "professor": "Steven La Fleur",
+        "classId": "CS224",
+        "room": "E201",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Li Xiong",
+        "classId": "CS170",
+        "room": "E301",
+        "time": "1:00pm",
+        "days": "TTh"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }, {
+        "professor": "Jinho Choi",
+        "classId": "CS323",
+        "room": "W203",
+        "time": "10:00am",
+        "days": "MW"
+    }]
+}

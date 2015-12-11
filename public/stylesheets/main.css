@@ -1,0 +1,97 @@
+#gridEntry {
+    width: 200px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#occupied {
+    background-color: LightBlue;
+    width: 180px;
+    height: 180px;
+}
+
+#visiblePart {
+    padding: 10px;
+}
+
+
+#vacant {
+    width: 180px;
+    height: 180px;
+    padding: 10px;
+}
+
+#horizontalLabel {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#verticalLabel {
+    width: 80px;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#verticalSpace {
+    width: 80px;
+    height: 40px;
+    /*padding: 10px;*/
+}
+
+.right {
+    position: absolute;
+    right: 0px;
+    width: 300px;
+}
+
+#clickable {}
+
+table.scroll {
+    /* width: 100%; */
+    /* Optional */
+    /* border-collapse: collapse; */
+    border-spacing: 0;
+    border: 2px solid black;
+}
+
+table.scroll tbody,
+table.scroll thead {
+    display: block;
+}
+
+thead tr th {
+    height: 30px;
+    line-height: 30px;
+    /* text-align: left; */
+}
+
+table.scroll tbody {
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody.list {
+    border-top: 2px solid black;
+}
+
+tbody td.list,
+thead td.list {
+    /* width: 20%; */
+    /* Optional */
+    border-right: 1px solid black;
+    /* white-space: nowrap; */
+}
+
+tbody td:last-child,
+thead th:last-child {
+    border-right: none;
+}
+
+.nav {
+    font-size: 200%;
+}

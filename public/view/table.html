@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 style="text-align:left;float:left;"> 
+     List View 
+    </h1>
+    <a style=" padding-left: 2%;float: left" class="btn" title="Export Table" ng-click='csv.generate()' ng-href="{{ csv.link() }}" download="schedule.csv">
+        <br>
+        <i class="glyphicon glyphicon-new-window"></i> &#160;Export
+    </a>
+    <table style="width:100%" export-csv="csv" class="table table-bordered">
+        <thead>
+            <tr class="clickable text-center">
+                <th ng-click="reverse=!reverse;order('professor', reverse)">Professor</th>
+                <th ng-click="reverse=!reverse;order('class', reverse)">Class</th>
+                <th ng-click="reverse=!reverse;order('room', reverse)">Room Number</th>
+                <th ng-click="reverse=!reverse;order('days', reverse)">Days of Week</th>
+                <th ng-click="reverse=!reverse;order('time', reverse)">Time of Week</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-click="editorEnabled=true" ng-repeat="entry in calendar.blocks">
+                <td ng-click="focus('professor')" ng-hide="editorEnabled" class="list">{{entry.professor}}</td>
+                <td ng-click="focus('class')" ng-hide="editorEnabled" class="list">{{entry.classId}}</td>
+                <td ng-click="focus('room')" ng-hide="editorEnabled" class="list">{{entry.room}}</td>
+                <td ng-click="focus('days')" ng-hide="editorEnabled" class="list">{{entry.days}}</td>
+                <td ng-click="focus('time')" ng-hide="editorEnabled" class="list">{{entry.time}} <span ng-click="delete($index)" class="btn btn-xs" style="float:right"><i class="glyphicon glyphicon-remove"></i></span></td>
+                </td>
+                <td id="professor" ng-show="editorEnabled" ng-enter="editorEnabled=false; save()">
+                    <input uib-typeahead="prof.name for prof in professors | filter:$viewValue | limitTo:8" class="form-control input-sm" show-focus="focusObject ==='professor'" ng-click="focus('professor')" ng-model="entry.professor">
+                </td>
+                <td id="class" ng-show="editorEnabled" ng-enter="editorEnabled=false; save()">
+                    <input class="form-control input-sm" show-focus="focusObject ==='class'" ng-click="focus('class')" ng-model="entry.classId">
+                </td>
+                <td id="room" ng-show="editorEnabled" ng-enter="editorEnabled=false; save()">
+                    <input uib-typeahead="room.code for room in classrooms | filter:$viewValue | limitTo:8" class="form-control input-sm" show-focus="focusObject ==='room'" ng-click="focus('room')" ng-model="entry.room">
+                </td>
+                <td id="days" ng-show="editorEnabled" ng-enter="editorEnabled=false; save()">
+                    <input class="form-control input-sm" show-focus="focusObject ==='days'" ng-click="focus('days')" ng-model="entry.days">
+                </td>
+                <td id="time" ng-show="editorEnabled" ng-enter="editorEnabled=false; save()">
+                    <input uib-typeahead="slot for slot in timeSlots | filter:$viewValue | limitTo:8" class="form-control input-sm" show-focus="focusObject ==='time'" ng-click="focus('time')" ng-model="entry.time">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn" ng-click="add();">
+        <i class="glyphicon glyphicon-plus"></i> Add
+    </a>
+</div>

@@ -1,0 +1,73 @@
+<!-- HTML file for configuration view. Includes tables and ng-directives -->
+<div class="container" ng-controller="optionCtrl">
+    <div style="padding-bottom:50px">
+        <table style="width:100%">
+            <tr>
+                <td style="width:50%; vertical-align: top; border-right-style: dotted;;border-width: 0px 1px 0px 0px;padding-right: 20px;">
+                    <div style="padding-bottom:20px">
+                        <h3>Add a Professor</h3>
+                    </div>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Name</label>
+                            <div style= " width = 100%" class="col-md-4">
+                                <input style="float: left; width: 75%" type="text" class="form-control" name="name" ng-model="name" />
+                                <!-- call for addRow function in calendar controller file -->
+                                <input style="left-padding: 5px;margin-bottom: 0px;margin-top: 10px;" type="submit" value="Add" class="btn btn-primary" ng-click="addRow(0)">
+                            </div>
+                        </div>
+                    </form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Name
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-model="professors">
+                            <tr ng-repeat="professor in professors">
+                                <td editable-text="professor.name" onbeforesave="saveProfessor(professor.name)" onaftersave="updateProfessor(professor.name)">{{professor.name}}</td>
+                                <!-- call for removeRow function in calendar controller file -->
+                                <td><input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(professor.name, 'professor')" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td style="width: 50%; vertical-align: top;padding-left: 20px;">
+                    <div style="padding-bottom:20px">
+                        <h3>Add a Classroom</h3>
+                    </div>
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group;float: left;">
+                            <label class="col-md-2 control-label">Code</label>
+                            <div class="col-md-4">
+                                <input style="float: left; width: 75%" type="text" class="form-control" name="code" ng-model="code" />
+                                <input style="right-padding: 5%; /* float: right */margin-top: 10px;margin-bottom: 15px;" type="submit" value="Add" class="btn btn-primary" ng-click="addRow(1)">
+                            </div>
+                        </div>
+                    </form>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Classroom
+                                </th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-model = "classroom">
+                            <tr ng-repeat="classroom in classrooms">
+                                <td editable-text="classroom.code" onbeforesave="saveClassroom(classroom.code)" onaftersave="updateClassroom(classroom.code)">{{classroom.code}}
+                                </td>
+                                <td>
+                                    <input type="button" value="Remove" class="btn btn-primary" ng-click="removeRow(classroom.code, 'classroom')" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</div>

@@ -1,0 +1,14 @@
+{
+    "professors": [{
+        "name": "Valerie Summet"
+    }, {
+        "name": "Erin Nagle"
+    }],
+    "classrooms": [{
+        "code": "W201"
+    }, {
+        "code": "E201"
+    }, {
+        "code": "E203"
+    }]
+}
