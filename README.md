@@ -4,7 +4,7 @@ The project involves implementing a tool (scheduler) that helps schedule and org
 
 
 ###Demo 
-Amazon Ubuntu EC2 instance: 
+Running on Amazon Ubuntu EC2 instance: 
 http://52.11.161.241:3000/
 
 ### Getting Started
